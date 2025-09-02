@@ -20,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 6px;   /* padding kam ki */
+  padding: 12px;   /* padding kam ki */
   background: #004225;
   color: white;
   text-align: center;
@@ -95,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;  /* Left aligned row */
-  padding: 15px 30px;
+  padding: 30px 60px;
   flex-wrap: nowrap;          /* Row me hi sab aaye */
 }
 
@@ -109,7 +109,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* Left se start hoga */
-  padding: 15px 30px;
+  padding: 20px 40px;
   background: #154734; /* Green */
   color: white;
 }
@@ -201,7 +201,7 @@ nav {
   gap: 10px;
   align-items: center;
   justify-content: center;
-  padding: 10px 12px;
+  padding: 18px 24px;
   background: #000000;
   flex-wrap: wrap;
 }
@@ -404,7 +404,7 @@ nav .has-submenu:hover .submenu {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  width: 90%;
+  width: 98%;
 }
 
 /* Left (Photo + Name) */
