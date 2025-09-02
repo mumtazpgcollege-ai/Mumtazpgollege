@@ -336,7 +336,7 @@ nav .has-submenu:hover .submenu {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  width: 100%;
+  width: 85%;
 }
 
 /* Left (Photo + Name) */
