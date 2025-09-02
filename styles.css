@@ -14,75 +14,6 @@ body {
   background: #ffffff; /* background white */
 }
 </style>
-/* ===== HEADER COMPACT ===== */
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 12px;   /* padding kam ki */
-  background: #004225;
-  color: white;
-  text-align: center;
-}
-
-.header img {
-  max-height: 60px;  /* logo chhota */
-  margin-bottom: 3px;
-}
-
-.header h1 {
-  font-size: 22px;   /* chhota text */
-  margin: 0;
-  font-weight: bold;
-  line-height: 1.1;
-}
-
-.header h2 {
-  font-size: 16px;   /* subheading bhi chhoti */
-  margin: 0;
-  font-weight: normal;
-}
-
-/* ===== MENU COMPACT ===== */
-.navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;       /* gap thoda kam */
-  padding: 6px;   /* padding kam */
-  background: maroon;
-}
-
-.navbar a {
-  color: white;
-  text-decoration: none;
-  padding: 4px 8px;  /* button chhota */
-  background: #7b1113;
-  border-radius: 3px;
-  font-size: 13px;   /* text size chhoti */
-  white-space: nowrap;
-}
-
-/* ===== Mobile View ===== */
-@media screen and (max-width: 768px) {
-  .header h1 {
-    font-size: 18px;
-  }
-  .header h2 {
-    font-size: 14px;
-  }
-  .navbar {
-    flex-direction: column;
-    gap: 4px;
-  }
-  .navbar a {
-    text-align: center;
-    width: 100%;
-    font-size: 14px;
-  }
-}
-
 <!-- ==============================
    Header Section
    Top heading / title bar
@@ -101,7 +32,7 @@ body {
 
 /* Logo Left */
 .college-logo {
-  height: 120px;   /* 250px bahut bada tha, adjust karke rakh liya */
+  height: 80px;   /* 250px bahut bada tha, adjust karke rakh liya */
   width: auto;
   margin-right: 20px;
 }
@@ -135,7 +66,7 @@ body {
 
 /* ===== English Title ===== */
 .eng-title {
-  font-size: 5em;
+  font-size: 4em;
   font-weight: bold;
   margin: 0;
   font-family: 'ArmWrestler', serif;  /* ✅ sirf font-family ka naam dena hai, .ttf nahi */
@@ -153,7 +84,7 @@ body {
 /* Urdu Title (English ke niche) */
 .urdu-title {
   font-family: 'JameelNoori', serif;
-  font-size: 3.5em;
+  font-size: 3em;
   margin: 8px 0 0 0;
   text-align: center;
   color: white;
@@ -404,7 +335,7 @@ nav .has-submenu:hover .submenu {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  width: 98%;
+  width: 100%;
 }
 
 /* Left (Photo + Name) */
