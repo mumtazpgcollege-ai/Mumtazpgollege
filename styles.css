@@ -1,0 +1,722 @@
+<!-- ==============================
+   General Body and Layout
+   Body styling + font + background
+================================ -->
+<style>
+/* Global font for entire website */
+body {
+  font-family: "Times New Roman", serif;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff; /* background white */
+}
+</style>
+
+<!-- ==============================
+   Header Section
+   Top heading / title bar
+================================ -->
+<style>
+/* ===== COLLEGE HEADER ===== */
+.college-header {
+  background: #154734;       /* Green background */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* Left aligned row */
+  padding: 15px 30px;
+  flex-wrap: nowrap;          /* Row me hi sab aaye */
+}
+
+/* Logo Left */
+.college-logo {
+  height: 120px;   /* 250px bahut bada tha, adjust karke rakh liya */
+  width: auto;
+  margin-right: 20px;
+}
+.college-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Left se start hoga */
+  padding: 15px 30px;
+  background: #154734; /* Green */
+  color: white;
+}
+
+.college-logo {
+  height: 320px;
+  width: auto;
+  margin-right: 20px; /* Logo aur text ke beech gap */
+  display: block;
+}
+/* Center Title Block (English + Urdu + Tagline) */
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+/* ===== English Font Import ===== */
+@font-face {
+  font-family: 'ArmWrestler';
+  src: url('ArmWrestler.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===== English Title ===== */
+.eng-title {
+  font-size: 6em;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'ArmWrestler', serif;  /* ✅ sirf font-family ka naam dena hai, .ttf nahi */
+  color: white;
+}
+
+/* Urdu Font Import */
+@font-face {
+  font-family: 'JameelNoori';
+ src: url('JameelNooriNastaleeqKasheeda.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Urdu Title (English ke niche) */
+.urdu-title {
+  font-family: 'JameelNoori', serif;
+  font-size: 3.9em;
+  margin: 8px 0 0 0;
+  text-align: center;
+  color: white;
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.5em;
+  margin: 5px 0 0;
+  font-family: "Times New Roman", serif;
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Responsive (mobile view) */
+@media (max-width: 768px) {
+  .college-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .college-logo {
+    height: 90px;
+    margin: 0 0 10px 0;
+  }
+  .eng-title {
+    font-size: 2em;
+  }
+  .urdu-title {
+    font-size: 1.8em;
+  }
+}
+header {
+  background: #154734;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+/* ==============================
+   NAVIGATION (Desktop Menu)
+================================ */
+nav {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  background: #000000;
+  flex-wrap: wrap;
+}
+
+nav a, nav .has-submenu > a {
+  color:#ffffff;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  background: maroon;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: #551ce4;
+}
+
+/* Submenu */
+nav .has-submenu {
+  position: relative;
+}
+nav .has-submenu > a::after {
+  content: " ▾";
+  font-size: 12px;
+}
+nav .submenu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 220px;
+  background: #e3e3e3;
+  border: 1px solid maroon;
+  display: none;
+  z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+nav .submenu a {
+  background: maroon !important;
+  color: white !important;
+  display: block;
+  padding: 10px 12px;
+  border-bottom: 1px solid #922;
+}
+nav .submenu a:hover {
+  background: #a00000 !important;
+  color: #fff !important;
+}
+nav .has-submenu:hover .submenu {
+  display: block;
+}
+
+/* ==============================
+   HAMBURGER + SIDEBAR (Mobile)
+================================ */
+/* Hamburger button */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;   /* Default hidden (desktop) */
+  padding: 10px;
+  background: maroon;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;          /* hidden by default */
+  height: 100%;
+  width: 230px;
+  background: maroon;
+  color: white;
+  padding-top: 60px;
+  transition: 0.3s;
+  z-index: 9999;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  border-radius: 0 10px 10px 0;
+}
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #922;
+}
+.sidebar a:hover {
+  background-color: #a33;
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ==============================
+   RESPONSIVE CONTROL
+================================ */
+/* ✅ Sirf mobile ke liye */
+@media (max-width: 768px) {
+  .hamburger { display: block; }   /* hamburger visible */
+  nav { display: none; }           /* desktop nav hide */
+}
+
+/* ✅ Sirf desktop ke liye */
+@media (min-width: 769px) {
+  .sidebar { display: none; }      /* sidebar hide */
+}
+/* By default desktop nav dikhna chahiye */
+.desktop-nav {
+  display: flex;
+}
+
+/* Mobile view ke liye desktop nav hide aur hamburger show */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;   /* ❌ ye line missing hogi abhi */
+  }
+  .hamburger {
+    display: block;  /* ✅ sirf mobile me hamburger show hoga */
+  }
+}
+<!-- ==============================
+   Slider Section
+   Automatic sliding banner images
+================================ -->
+<style>
+.slider {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideAnimation 12s infinite;
+}
+
+.slide img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Caption under image */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7); /* Black transparent */
+  color: white;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  30% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 0; }
+}
+</style>
+
+<!-- ==============================
+   Principal/Manager Message Section
+================================ -->
+/* Message Row */
+.message-row {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 600px;
+}
+
+/* Box */
+.message-box {
+  display: flex;
+  background: #fff0f0;
+  border: 12px solid maroon;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  width: 100%;
+}
+
+/* Left (Photo + Name) */
+.message-left {
+  width: 35%;
+  text-align: center;
+  padding: 25px;
+  border-right: 8px solid maroon;
+}
+.message-left img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  border: 4px solid maroon;
+  border-radius: 25px;
+  margin-bottom: 8px;
+}
+.message-left h3 {
+  margin: 0;
+  color: maroon;
+  font-size: 18px;
+}
+.message-left span {
+  color: black;
+  font-weight: bold;
+}
+
+/* Right (Message Text) */
+.message-right {
+  width: 65%;
+  padding: 20px;
+}
+.msg-title {
+  color: maroon;
+  margin: 0 0 15px;
+  font-size: 22px;
+  text-decoration: underline;
+}
+.msg-text {
+  font-size: 44px;
+  color: #000080;  /* navy blue text */
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .message-box {
+    flex-direction: column;
+  }
+  .message-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid maroon;
+  }
+  .message-right {
+    width: 100%;
+  }
+}
+
+<!-- ==============================
+   Scrolling Notice Bar
+================================ -->
+<style>
+.scrolling-notice {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #fff3cd;
+  color: #d9534f;
+  padding: 10px 0;
+  border-top: 2px solid #f0ad4e;
+  border-bottom: 2px solid #f0ad4e;
+  font-weight: bold;
+  font-family: 'Times New Roman', serif;
+  position: relative;
+}
+.scrolling-notice span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<!-- ==============================
+   Content Wrapper (Main + Sidebar)
+================================ -->
+<style>
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px;
+}
+.main-content {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+</style>
+
+<!-- ==============================
+   News Box (Scrolling news list)
+================================ -->
+<style>
+.news-box {
+  background: white;
+  border: 2px solid maroon;
+  padding: 10px;
+  width: 250px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.news-box h3 {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  background: maroon;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+}
+.news-container {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.news-items {
+  display: flex;
+  flex-direction: column;
+  animation: scrollNews 10s linear infinite;
+}
+.news-items div {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+@keyframes scrollNews {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+</style>
+
+<!-- ==============================
+   Info Boxes (Courses/Highlights)
+================================ -->
+<style>
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+.info-box {
+  background: white;
+  border: 2px solid maroon;
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.info-box img { width: 50px; height: 50px; margin-bottom: 10px; }
+.info-box h4 { margin: 0; font-size: 16px; color: maroon; }
+</style>
+
+/* ==============================
+   Notice Section
+   (Teachers & Students Notices)
+================================ */
+.notice-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;              /* box ke beech ka gap */
+  margin: 20px auto;
+  max-width: 1000px;      /* center alignment */
+}
+
+.notice-box {
+  flex: 1 1 300px;        /* responsive width */
+  max-width: 300px;       /* overlap na ho */
+  background: #fff;
+  border: 2px solid maroon;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1); /* halka shadow */
+}
+
+.notice-box h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  background: maroon;
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 3px;
+}
+
+.notice-box p {
+  font-size: 14px;
+  color: #333;             /* text readable */
+  margin: 10px 0;
+}
+
+.notice-box a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: maroon;
+  font-weight: bold;
+}
+
+.notice-box a:hover {
+  text-decoration: underline;
+}
+
+<!-- ==============================
+   Popup Banner (Big announcement)
+================================ -->
+<style>
+.popup-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.popup-content {
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  cursor: pointer;
+}
+.popup-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: maroon;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+</style>
+
+<!-- ==============================
+   Floating Blinking Button (Apply Now)
+================================ -->
+<style>
+.apply-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: maroon;
+  color: white;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  animation: blink 1s infinite;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 999;
+}
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+</style>
+
+<!-- ==============================
+   Admission Section Boxes
+================================ -->
+<style>
+.admission-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+.admission-box {
+  background: #fff;
+  border: 2px solid maroon;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+.admission-box h3 { color: maroon; margin-bottom: 10px; }
+.admission-box ul { text-align: left; font-size: 13px; margin: 10px 0; }
+.admission-box button {
+  background: green; color: white; border: none;
+  padding: 8px 16px; border-radius: 4px; cursor: pointer;
+}
+.admission-box button:hover { background: darkgreen; }
+</style>
+
+<!-- ==============================
+   Learning Section Boxes
+================================ -->
+<style>
+.lurns-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+.lurns-box {
+  background: #fff;
+  border: 2px solid maroon;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+}
+.lurns-box img { width: 80px; margin-bottom: 10px; }
+.lurns-box h3 { margin: 10px 0; color: maroon; }
+.lurns-box button {
+  background: green; color: white; border: none;
+  padding: 8px 16px; border-radius: 4px; cursor: pointer;
+}
+.lurns-box button:hover { background: darkgreen; }
+.lurns-guideline { text-align: center; margin-top: 20px; }
+.lurns-guideline button {
+  background: green; color: white; border: none;
+  padding: 8px 16px; border-radius: 4px; cursor: pointer;
+}
+.lurns-guideline button:hover { background: darkgreen; }
+</style>
+
+<!-- ==============================
+   Footer with Map
+================================ -->
+<footer>
+  <p>&copy; 2025 Mumtaz P.G. College. All Rights Reserved.</p>
+  <div style="margin-top: 20px;">
+    <h3 style="margin-bottom:5px; color:white;">📍 College Location</h3>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=..." 
+      width="100%" height="250" 
+      style="border:0; border-radius:5px;"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+</footer>
