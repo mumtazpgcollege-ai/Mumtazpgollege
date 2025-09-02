@@ -67,7 +67,7 @@ body {
 
 /* ===== English Title ===== */
 .eng-title {
-  font-size: 6em;
+  font-size: 5em;
   font-weight: bold;
   margin: 0;
   font-family: 'ArmWrestler', serif;  /* ✅ sirf font-family ka naam dena hai, .ttf nahi */
@@ -85,7 +85,7 @@ body {
 /* Urdu Title (English ke niche) */
 .urdu-title {
   font-family: 'JameelNoori', serif;
-  font-size: 3.9em;
+  font-size: 3.5em;
   margin: 8px 0 0 0;
   text-align: center;
   color: white;
@@ -130,7 +130,7 @@ header {
 ================================ */
 nav {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   padding: 10px 12px;
